@@ -1,0 +1,135 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   font-family:  "Rubik", sans-serif; 
+}
+
+:root{
+    --blue: #1b88ee
+}
+
+input,button{
+    border: none;
+    outline: none;
+    font-family:  "Rubik", sans-serif; 
+}
+
+
+.open{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.open > div{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--blue);
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(65, 65, 65, 0.151);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s;
+}
+
+.modal.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal-box{
+    width: 450px;
+    background: #fff;
+    border: 1px solid var(--blue);
+    padding: 40px;
+    border-radius: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s;
+    transform: translateY(-50px);
+}
+
+.modal-box.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+
+.modal-box_title{
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: var(--blue);
+    font-weight: 500;
+}
+
+.modal-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.modal-form input{
+    width: 100%;
+    border: 1.5px solid #E6E6E6;
+    border-radius: 10px;
+    padding: 16px 15px;
+    font-size: 16px;
+}
+
+.modal-form_title{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 130%;
+    font-feature-settings: 'liga' off;
+}
+
+.form-buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-buttons_btn{
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--blue);
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-close{
+    color: #1A1A1A;
+    background: #F3F3F3;
+}

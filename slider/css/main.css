@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+  }
+  
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100vw;
+    gap: 20px;
+    padding: 50px;
+  }
+  
+  .images img {
+    height: 100%;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 2px solid rgb(226, 225, 225);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .images img.active {
+    width: 700px;
+  }
+  
