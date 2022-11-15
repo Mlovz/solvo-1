@@ -26,42 +26,30 @@ const Todo = () => {
     setTodos(newData);
   };
 
-  const handleFinish = (id) => {
-    console.log(id);
+  const handleFinish = (item) => {
+    const newData = todos.map((todo) => {
+      if (todo.id === item.id) {
+        return { ...item, isComplete: !item.isComplete };
+      }
+      return todo;
+    });
 
-    // const newData = todos.map((item) => ({
-    //   ...item,
-    //   isComplete: item.id === id && !item.isComplete,
-    // }));
-    const newData = [
-      ...todos.map((item) => {
-        if (item.id === id) {
-          return { ...item, isComplete: !item.isComplete };
-        } else {
-          return { ...item };
-        }
-      }),
-    ];
-
-    console.log(newData);
-
-    // setTodos(newData);
+    setTodos(newData);
   };
 
-  useEffect(() => {
-    console.log("render");
-  }, [todos.length]);
+  // useEffect(() => {
+  //   console.log("render");
+  // }, [todos.length]);
 
   const handleOpen = () => {
     setOpen(!open);
   };
 
-  console.log(open);
   return (
     <div className="todo">
-      <button onClick={handleOpen}>Open</button>
+      {/* <button onClick={handleOpen}>Open</button> */}
 
-      {/* <form>
+      <form>
         <input type="text" value={text} onChange={handleChange} />
         <button type="submit" onClick={handleClick}>
           Добавить
@@ -75,12 +63,12 @@ const Todo = () => {
           >
             {item.text}
             <button onClick={() => handleDelete(item.id)}>Delete</button>
-            <button onClick={() => handleFinish(item.id)}>Finish</button>
+            <button onClick={() => handleFinish(item)}>Finish</button>
           </p>
         ))}
-      </div> */}
+      </div>
 
-      <div className={`list ${open ? "active" : ""}`}>List</div>
+      {/* <div className={`list ${open ? "active" : ""}`}>List</div> */}
 
       {/* //Условный рендеринг 1-вариант*/}
       {/* {open && <div>List</div>} */}
