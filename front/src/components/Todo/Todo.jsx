@@ -21,10 +21,9 @@ const Todo = () => {
 
   const handleDelete = (e, id) => {
     e.preventDefault();
-    console.log(id);
 
-    // const newData = todos.filter((item) => item.id !== id);
-    // setTodos(newData);
+    const newData = todos.filter((item) => item.id !== id);
+    setTodos(newData);
   };
 
   return (
