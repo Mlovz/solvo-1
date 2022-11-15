@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 
 const Todo = () => {
-  const [todos, setTodos] = useState([{ text: "123", id: Math.random() }]);
+  const [todos, setTodos] = useState([
+    { text: "123", id: 1 },
+    { text: "2222222222222", id: 10 },
+  ]);
   const [text, setText] = useState("");
 
   const handleChange = (e) => {
@@ -10,7 +13,18 @@ const Todo = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+
+    if (text === "") return;
+
     setTodos([...todos, { text: text, id: Math.random() }]);
+  };
+
+  const handleDelete = (e, id) => {
+    e.preventDefault();
+    console.log(id);
+
+    // const newData = todos.filter((item) => item.id !== id);
+    // setTodos(newData);
   };
 
   return (
@@ -22,7 +36,10 @@ const Todo = () => {
         </button>
         <div>
           {todos.map((item, index) => (
-            <p key={index}>{item.text}</p>
+            <p key={index}>
+              {item.text}
+              <button onClick={(e) => handleDelete(e, item.id)}>Delete</button>
+            </p>
           ))}
         </div>
       </form>
