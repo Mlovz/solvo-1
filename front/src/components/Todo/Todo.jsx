@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Todo = () => {
   const [todos, setTodos] = useState([
@@ -26,15 +26,29 @@ const Todo = () => {
 
   const handleFinish = (id) => {
     console.log(id);
-    const newData = todos.map((item) => ({
-      ...item,
-      isComplete: item.id === id && !item.isComplete,
-    }));
+
+    // const newData = todos.map((item) => ({
+    //   ...item,
+    //   isComplete: item.id === id && !item.isComplete,
+    // }));
+    const newData = [
+      ...todos.map((item) => {
+        if (item.id === id) {
+          return { ...item, isComplete: !item.isComplete };
+        } else {
+          return { ...item };
+        }
+      }),
+    ];
 
     console.log(newData);
 
-    setTodos(newData);
+    // setTodos(newData);
   };
+
+  useEffect(() => {
+    console.log("render");
+  }, [todos.length]);
 
   return (
     <div className="todo">
