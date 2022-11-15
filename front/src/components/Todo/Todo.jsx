@@ -7,6 +7,8 @@ const Todo = () => {
   ]);
   const [text, setText] = useState("");
 
+  const [open, setOpen] = useState(false);
+
   const handleChange = (e) => {
     setText(e.target.value);
   };
@@ -50,9 +52,16 @@ const Todo = () => {
     console.log("render");
   }, [todos.length]);
 
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
+  console.log(open);
   return (
     <div className="todo">
-      <form>
+      <button onClick={handleOpen}>Open</button>
+
+      {/* <form>
         <input type="text" value={text} onChange={handleChange} />
         <button type="submit" onClick={handleClick}>
           Добавить
@@ -69,7 +78,15 @@ const Todo = () => {
             <button onClick={() => handleFinish(item.id)}>Finish</button>
           </p>
         ))}
-      </div>
+      </div> */}
+
+      <div className={`list ${open ? "active" : ""}`}>List</div>
+
+      {/* //Условный рендеринг 1-вариант*/}
+      {/* {open && <div>List</div>} */}
+
+      {/* //Условный рендеринг 2-вариант*/}
+      {/* {open ? <div>List</div> : ""} */}
     </div>
   );
 };
