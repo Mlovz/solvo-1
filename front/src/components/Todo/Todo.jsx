@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 const Todo = () => {
   const [todos, setTodos] = useState([
-    { text: "123", id: 1 },
-    { text: "2222222222222", id: 10 },
+    { text: "123", id: 1, isComplete: false },
+    { text: "2222222222222", id: 10, isComplete: false },
   ]);
   const [text, setText] = useState("");
 
@@ -19,10 +19,20 @@ const Todo = () => {
     setTodos([...todos, { text: text, id: Math.random() }]);
   };
 
-  const handleDelete = (e, id) => {
-    e.preventDefault();
-
+  const handleDelete = (id) => {
     const newData = todos.filter((item) => item.id !== id);
+    setTodos(newData);
+  };
+
+  const handleFinish = (id) => {
+    console.log(id);
+    const newData = todos.map((item) => ({
+      ...item,
+      isComplete: item.id === id && !item.isComplete,
+    }));
+
+    console.log(newData);
+
     setTodos(newData);
   };
 
@@ -33,15 +43,19 @@ const Todo = () => {
         <button type="submit" onClick={handleClick}>
           Добавить
         </button>
-        <div>
-          {todos.map((item, index) => (
-            <p key={index}>
-              {item.text}
-              <button onClick={(e) => handleDelete(e, item.id)}>Delete</button>
-            </p>
-          ))}
-        </div>
       </form>
+      <div>
+        {todos.map((item, index) => (
+          <p
+            key={index}
+            className={`${item.isComplete ? "text finish" : "text"}`}
+          >
+            {item.text}
+            <button onClick={() => handleDelete(item.id)}>Delete</button>
+            <button onClick={() => handleFinish(item.id)}>Finish</button>
+          </p>
+        ))}
+      </div>
     </div>
   );
 };

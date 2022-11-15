@@ -14,3 +14,14 @@ code {
 
 .app {
 }
+
+.todo {
+}
+
+.todo .text {
+  border: 1px solid #000;
+}
+
+.todo .text.finish {
+  background: red;
+}
