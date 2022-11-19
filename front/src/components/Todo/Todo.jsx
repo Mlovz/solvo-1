@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./todo.css";
 
 const Todo = () => {
   const [todos, setTodos] = useState([
@@ -29,7 +30,7 @@ const Todo = () => {
   const handleFinish = (item) => {
     const newData = todos.map((todo) => {
       if (todo.id === item.id) {
-        return { ...item, isComplete: !item.isComplete };
+        return { ...todo, isComplete: !todo.isComplete };
       }
       return todo;
     });
@@ -49,20 +50,20 @@ const Todo = () => {
     <div className="todo">
       {/* <button onClick={handleOpen}>Open</button> */}
 
-      <form>
+      <form className="todo-form">
         <input type="text" value={text} onChange={handleChange} />
         <button type="submit" onClick={handleClick}>
           Добавить
         </button>
       </form>
-      <div>
+      <div className="todo-list">
         {todos.map((item, index) => (
           <p
             key={index}
             className={`${item.isComplete ? "text finish" : "text"}`}
           >
             {item.text}
-            <button onClick={() => handleDelete(item.id)}>Delete</button>
+            <button onClick={() => handleDelete(item.id)}>&times;</button>
             <button onClick={() => handleFinish(item)}>Finish</button>
           </p>
         ))}
