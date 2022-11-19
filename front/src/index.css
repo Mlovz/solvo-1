@@ -12,15 +12,13 @@ code {
     monospace;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .app {
 }
 
 .todo {
-}
-
-.todo .text {
-}
-
-.todo .text.finish {
-  text-decoration: line-through;
 }

@@ -58,14 +58,15 @@ const Todo = () => {
       </form>
       <div className="todo-list">
         {todos.map((item, index) => (
-          <p
-            key={index}
-            className={`${item.isComplete ? "text finish" : "text"}`}
-          >
-            {item.text}
-            <button onClick={() => handleDelete(item.id)}>&times;</button>
-            <button onClick={() => handleFinish(item)}>Finish</button>
-          </p>
+          <div key={index} className={`${item.isComplete ? "disabled" : ""}`}>
+            <span className={`${item.isComplete ? "text finish" : "text"}`}>
+              {item.text}
+            </span>
+            <div className="todo-list-btn">
+              <button onClick={() => handleDelete(item.id)}>&times;</button>
+              <button onClick={() => handleFinish(item)}>Finish</button>
+            </div>
+          </div>
         ))}
       </div>
 

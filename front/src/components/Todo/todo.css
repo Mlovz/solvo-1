@@ -1,5 +1,5 @@
 .todo {
-  background: rgb(255, 245, 245);
+  background: rgb(238, 238, 238);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .todo-form input {
@@ -25,9 +26,56 @@
   outline: none;
 }
 
+.todo-list .text.finish {
+  text-decoration: line-through;
+}
+
 .todo-form button {
-  background: rgb(55, 125, 255);
+  background: rgb(15, 99, 255);
   color: #fff;
   padding: 10px;
   border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.todo-list {
+  margin-top: 20px;
+  width: 400px;
+  padding: 20px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  height: 300px;
+  overflow-y: auto;
+}
+
+.todo-list > div {
+  margin-top: 10px;
+
+  border: 1px solid #dbdbdb;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-list > div.disabled {
+  opacity: 0.5;
+}
+
+.todo-list-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.todo-list-btn button {
+  background: transparent;
+  border: 1px solid #dbdbdb;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
