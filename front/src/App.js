@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import Todo from "./components/Todo/Todo";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <div className="app">
-      <Todo />
+      <Header />
     </div>
   );
 };
