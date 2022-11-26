@@ -1,0 +1,13 @@
+.notify-list {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #dbdbdd;
+  border-radius: 10px;
+  height: 150px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

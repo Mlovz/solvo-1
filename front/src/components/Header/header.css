@@ -1,0 +1,44 @@
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #ebe6e6;
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-menu {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-menu li {
+  position: relative;
+}
+
+.header-form {
+  border: 1px solid #ebe6e6;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  width: 302px;
+}
+
+.header-form input {
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.header-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 5px;
+  background: transparent;
+}
