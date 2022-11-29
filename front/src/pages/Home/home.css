@@ -1,0 +1,22 @@
+.home {
+  margin-top: 60px;
+  display: flex;
+  align-items: flex-start;
+  gap: 46px;
+}
+
+.home-left {
+  max-width: 544px;
+  width: 100%;
+  border: 1px solid #000;
+}
+
+.home-right {
+  flex-grow: 1;
+}
+
+.home-offers {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+}

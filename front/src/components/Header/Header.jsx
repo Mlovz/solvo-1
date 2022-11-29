@@ -3,8 +3,7 @@ import "./header.css";
 
 import Logo from "../../assets/brand/logo.png";
 import { SearchIcon } from "../../utils";
-import NavMenu from "./NavMenu/NavMenu";
-import NavAuth from "./NavAuth/NavAuth";
+import { NavAuth, NavMenu } from "./index";
 
 const Header = () => {
   const isAuth = true;

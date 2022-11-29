@@ -14,3 +14,9 @@
   background: transparent;
   color: #0b98ff;
 }
+
+.follow {
+  background: transparent;
+  color: red !important;
+  border: 1px solid red !important;
+}

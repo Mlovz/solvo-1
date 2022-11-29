@@ -11,12 +11,14 @@ const App = () => {
     <BrowserRouter>
       <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/compass" element={<Compass />} />
-        <Route path="/message" element={<Message />} />
-        <Route path="/favorite" element={<Favorite />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/compass" element={<Compass />} />
+          <Route path="/message" element={<Message />} />
+          <Route path="/favorite" element={<Favorite />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };
