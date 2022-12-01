@@ -10,7 +10,12 @@ const CardOffer = ({ data, text }) => {
 
       <div className="card-offer-users">
         {data?.map((user, index) => (
-          <UserCard key={index} tag={user.tag} avatar={user.avatar}>
+          <UserCard
+            key={index}
+            username={user.name}
+            tag={user.tag}
+            avatar={user.avatar}
+          >
             <Button>Подписаться</Button>
           </UserCard>
         ))}
