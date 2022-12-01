@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "../../Button/Button";
+import Button from "../../Buttons/Button";
+import FollowBtn from "../../Buttons/FollowBtn/FollowBtn";
 import UserCard from "../UserCard/UserCard";
 import "./card-offer.css";
 
@@ -15,8 +16,9 @@ const CardOffer = ({ data, text }) => {
             username={user.name}
             tag={user.tag}
             avatar={user.avatar}
+            size={40}
           >
-            <Button>Подписаться</Button>
+            <FollowBtn />
           </UserCard>
         ))}
       </div>

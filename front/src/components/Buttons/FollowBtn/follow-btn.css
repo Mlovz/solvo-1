@@ -1,0 +1,46 @@
+
+
+.follow-btn{
+    width: 110px;
+    height: 23px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FDFDFD;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 3px;
+    background: #0B98FF;
+    transition: all .2s;
+}
+
+.follow-btn.unfollow{
+    border: 1px solid #FF4040;
+    color: #FF4040;
+    background: transparent;
+    animation: anim .2s ease-in-out;
+   
+}
+
+.follow-btn:active{
+    transform: scale(.9);
+}
+
+
+
+
+
+@keyframes anim {
+    0%{
+        transform: scale(.7);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
