@@ -13,3 +13,5 @@ export const navLinks = [
   { icon: Message, to: "/message" },
   { icon: Favorite, to: "/favorite" },
 ];
+
+export const homePosts = [{}, {}, {}];

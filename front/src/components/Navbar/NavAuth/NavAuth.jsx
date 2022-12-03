@@ -1,6 +1,6 @@
 import React from "react";
 import "./nav-auth.css";
-import Button from "../../Button/Button";
+import Button from "../../Buttons/Button";
 
 const NavAuth = () => {
   return (

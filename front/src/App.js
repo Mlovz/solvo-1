@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Compass from "./pages/Compass/Compass";
@@ -9,7 +9,7 @@ import Message from "./pages/Message/Message";
 const App = () => {
   return (
     <BrowserRouter>
-      <Header />
+      <Navbar />
 
       <div className="container">
         <Routes>

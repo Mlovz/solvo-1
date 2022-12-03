@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import "./home.css";
 import CardOffer from "../../components/Cards/CardOffer/CardOffer";
 import { useState } from "react";
+import { homePosts } from "../../utils";
+import PostCard from "../../components/Cards/PostCard/PostCard";
 
 const Home = (props) => {
   const data = [
@@ -29,7 +31,11 @@ const Home = (props) => {
 
   return (
     <div className="home">
-      <div className="home-left">as</div>
+      <div className="home-left">
+        {homePosts.map((post, index) => (
+          <PostCard key={index} />
+        ))}
+      </div>
       <div className="home-right">
         <div className="home-offers">
           <CardOffer data={data} text="Предложения"></CardOffer>

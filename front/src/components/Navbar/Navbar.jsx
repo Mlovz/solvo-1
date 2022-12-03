@@ -1,11 +1,11 @@
 import React from "react";
-import "./header.css";
+import "./navbar.css";
 
 import Logo from "../../assets/brand/logo.png";
 import { SearchIcon } from "../../utils";
 import { NavAuth, NavMenu } from "./index";
 
-const Header = () => {
+const Navbar = () => {
   const isAuth = true;
 
   return (
@@ -28,4 +28,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

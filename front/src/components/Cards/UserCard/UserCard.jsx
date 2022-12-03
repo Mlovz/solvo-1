@@ -1,11 +1,12 @@
 import React from "react";
 import "./user-card.css";
 
-const UserCard = ({ username, avatar, tag, children }) => {
+const UserCard = ({ username, size, avatar, tag, children }) => {
   return (
     <div className="user-card">
       <div className="user-card-block">
         <img
+          style={{ width: size, height: size }}
           src={
             avatar
               ? avatar
