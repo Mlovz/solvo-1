@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home.css";
 import CardOffer from "../../components/Cards/CardOffer/CardOffer";
+import { useState } from "react";
 
 const Home = (props) => {
   const data = [

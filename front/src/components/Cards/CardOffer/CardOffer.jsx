@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../Button/Button";
+import FollowBtn from "../../FollowBtn/FollowBtn";
 import UserCard from "../UserCard/UserCard";
 import "./card-offer.css";
 
@@ -11,7 +12,7 @@ const CardOffer = ({ data, text }) => {
       <div className="card-offer-users">
         {data?.map((user, index) => (
           <UserCard key={index} tag={user.tag} avatar={user.avatar}>
-            <Button>Подписаться</Button>
+            <FollowBtn />
           </UserCard>
         ))}
       </div>

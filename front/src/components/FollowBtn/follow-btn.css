@@ -1,0 +1,13 @@
+.follow-btn {
+  padding: 3px 15px;
+  background: rgb(9, 99, 255);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.follow-btn.unFollow {
+  background: transparent;
+  border: 1px solid red;
+  color: red;
+}
