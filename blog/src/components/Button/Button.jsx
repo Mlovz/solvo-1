@@ -1,15 +1,19 @@
 import React from "react";
 import "./button.css";
 
-const Button = ({ to, variant, children }) => {
+import { Link } from "react-router-dom";
+
+const Button = ({ to, variant, type, children }) => {
   return (
     <>
       {to ? (
-        <a href={to} className={`btn ${variant || ""}`}>
+        <Link to={to} className={`btn ${variant || ""}`}>
           {children}
-        </a>
+        </Link>
       ) : (
-        <button className={`btn ${variant || ""}`}>{children}</button>
+        <button type={type} className={`btn ${variant || ""}`}>
+          {children}
+        </button>
       )}
     </>
   );
