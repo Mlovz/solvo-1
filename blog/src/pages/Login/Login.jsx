@@ -41,10 +41,21 @@ const Login = () => {
             token: Math.random(),
           },
         });
+        dispatch({
+          type: "ALERT",
+          payload: {
+            success: "Вы вошли!",
+          },
+        });
         navigate("/");
         setLoading(false);
       } else {
-        alert("Неправильный пароль или логин!");
+        dispatch({
+          type: "ALERT",
+          payload: {
+            error: "Неправильный пароль или логин!",
+          },
+        });
       }
     }, 2000);
   };

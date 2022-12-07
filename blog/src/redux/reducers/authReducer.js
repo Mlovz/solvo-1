@@ -1,5 +1,3 @@
-import { combineReducers, createStore } from "redux";
-
 const authState = {
   user: {},
   token: "",
@@ -13,13 +11,15 @@ const authReducer = (state = authState, action) => {
         user: action.payload.user,
         token: action.payload.token,
       };
+    case "ALERT":
+      return {
+        user: {},
+        token: "",
+      };
+
     default:
       return state;
   }
 };
 
-const rootReducer = combineReducers({
-  authReducer,
-});
-
-export const store = createStore(rootReducer);
+export default authReducer;
