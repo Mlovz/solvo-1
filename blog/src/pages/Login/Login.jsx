@@ -44,10 +44,21 @@ const Login = () => {
         const token = "111111111111";
 
         localStorage.setItem("token", token);
+        dispatch({
+          type: "ALERT",
+          payload: {
+            success: "Вы вошли!",
+          },
+        });
         navigate("/");
         setLoading(false);
       } else {
-        alert("Неправильный пароль или логин!");
+        dispatch({
+          type: "ALERT",
+          payload: {
+            error: "Неправильный пароль или логин!",
+          },
+        });
       }
     }, 2000);
   };
