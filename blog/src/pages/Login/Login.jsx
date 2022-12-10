@@ -41,6 +41,9 @@ const Login = () => {
             token: Math.random(),
           },
         });
+        const token = "111111111111";
+
+        localStorage.setItem("token", token);
         navigate("/");
         setLoading(false);
       } else {

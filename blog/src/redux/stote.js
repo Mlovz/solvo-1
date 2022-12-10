@@ -1,25 +1,10 @@
-import { combineReducers, createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 
-const authState = {
-  user: {},
-  token: "",
-};
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+import { rootReducer } from "./reducers";
 
-const authReducer = (state = authState, action) => {
-  switch (action.type) {
-    case "AUTH":
-      return {
-        ...state,
-        user: action.payload.user,
-        token: action.payload.token,
-      };
-    default:
-      return state;
-  }
-};
-
-const rootReducer = combineReducers({
-  authReducer,
-});
-
-export const store = createStore(rootReducer);
+export const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
