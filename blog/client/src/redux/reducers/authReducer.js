@@ -13,7 +13,7 @@ const authReducer = (state = authState, action) => {
         ...state,
         user: action.payload.user,
         token: action.payload.token,
-        isAuth: true,
+        isAuth: action.payload.isAuth,
       };
 
     default:

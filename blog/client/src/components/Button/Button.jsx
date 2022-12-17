@@ -3,7 +3,7 @@ import "./button.css";
 
 import { Link } from "react-router-dom";
 
-const Button = ({ to, variant, type, children }) => {
+const Button = ({ to, variant, onClick, type, children }) => {
   return (
     <>
       {to ? (
@@ -11,7 +11,11 @@ const Button = ({ to, variant, type, children }) => {
           {children}
         </Link>
       ) : (
-        <button type={type} className={`btn ${variant || ""}`}>
+        <button
+          type={type}
+          onClick={onClick}
+          className={`btn ${variant || ""}`}
+        >
           {children}
         </button>
       )}

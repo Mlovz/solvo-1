@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../Button/Button";
 import "./navbar.css";
+import { logout } from "../../redux/actions/authActions";
 
 const Navbar = () => {
   const { user, isAuth } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
-  const logout = () => {
-    dispatch({ type: "LOGOUT" });
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -25,7 +26,9 @@ const Navbar = () => {
 
                 <div className="user-card">
                   <img src={user.avatar} alt="" />
-                  <span>{user.username}</span>
+                  <Button variant="outline" onClick={handleLogout}>
+                    Выйти
+                  </Button>
                 </div>
               </>
             ) : (
