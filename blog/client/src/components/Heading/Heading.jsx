@@ -1,11 +1,8 @@
-import "./heading.css";
+import React from "react";
+import "./heading.scss";
 
-const Heading = ({ color, children }) => {
-  return (
-    <h1 style={{ color: color }} className="heading">
-      {children}
-    </h1>
-  );
+const Heading = ({ type, children }) => {
+  return <h1 className={`heading ${type || ""}`}>{children}</h1>;
 };
 
 export default Heading;

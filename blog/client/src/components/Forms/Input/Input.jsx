@@ -3,28 +3,39 @@ import "./input.scss";
 
 const Input = ({
   value,
-  required,
-  type = "text",
-  name,
   placeholder,
+  name,
+  required = true,
+  type = "text",
+  textarea,
   onChange,
 }) => {
   return (
-    <label className={`field ${value ? "active" : ""}`}>
-      <div className="field_label">
+    <div className={`field ${value ? "active" : ""}`}>
+      <div className="field_label fs-14">
         {placeholder} {required && <span>*</span>}
       </div>
 
       <div className="field_input">
-        <input
-          type={type}
-          name={name}
-          required={required}
-          value={value || ""}
-          onChange={onChange}
-        />
+        {textarea ? (
+          <textarea
+            type={type}
+            name={name}
+            value={value || ""}
+            onChange={onChange}
+            required
+          />
+        ) : (
+          <input
+            type={type}
+            name={name}
+            value={value || ""}
+            onChange={onChange}
+            required
+          />
+        )}
       </div>
-    </label>
+    </div>
   );
 };
 

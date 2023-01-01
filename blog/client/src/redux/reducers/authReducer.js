@@ -1,21 +1,22 @@
 import { AUTH_TYPES } from "../types/authTypes";
 
-const authState = {
-  user: {},
+const initialState = {
+  user: null,
   token: "",
   isAuth: false,
 };
 
-const authReducer = (state = authState, action) => {
+const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case AUTH_TYPES.AUTH:
+      const { user, token, isAuth } = action.payload;
+
       return {
         ...state,
-        user: action.payload.user,
-        token: action.payload.token,
-        isAuth: action.payload.isAuth,
+        user: user,
+        token: token,
+        isAuth: isAuth,
       };
-
     default:
       return state;
   }

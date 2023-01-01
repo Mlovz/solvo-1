@@ -1,36 +1,32 @@
-import React, { useEffect } from "react";
-import Navbar from "./components/Navbar/Navbar";
-import { Login, Home, Register } from "./pages";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Alert from "./components/Alert/Alert";
-import Loading from "./components/Loading/Loading";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getUser } from "./redux/actions/authActions";
-import AuthLayout from "./components/Layout/AuthLayout";
-import AppLayout from "./components/Layout/AppLayout";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { Home, Login, Register, AddPost } from "pages";
+import { AppLayout, AuthLayout, Loading, Navbar } from "components";
+import { getUser } from "redux/actions/authAction";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUser());
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
       <Navbar />
-      <Alert />
       <Loading />
 
       <div className="container">
         <Routes>
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<Home />} />
+            <Route path="/add_post" element={<AddPost />} />
+          </Route>
           <Route path="/" element={<AuthLayout />}>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-          </Route>
-
-          <Route path="/" element={<AppLayout />}>
-            <Route index element={<Home />} />
           </Route>
         </Routes>
       </div>
