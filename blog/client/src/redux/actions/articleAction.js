@@ -6,7 +6,7 @@ export const getArticles = () => async (dispatch) => {
   try {
     dispatch({ type: ALERT, payload: { loading: true } });
 
-    const res = await api.get("/api//home/articles");
+    const res = await api.get("/api/home/articles");
 
     dispatch({ type: ARTICLE_TYPES.GET_ARTICLES, payload: res.data.articles });
 
